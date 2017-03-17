@@ -448,6 +448,10 @@ open class DefaultReactNavigationImplementation: ReactNavigationImplementation {
       viewController.view.backgroundColor = screenColor
     }
 
+    if let hidesBottomBarWhenPushed = boolForKey("hidesBottomBarWhenPushed", next) {
+      viewController.hidesBottomBarWhenPushed = hidesBottomBarWhenPushed
+    }
+
     if let prompt = stringForKey("prompt", next) {
       navItem.prompt = prompt
     } else if navItem.prompt != nil {
@@ -550,7 +554,7 @@ open class DefaultReactNavigationImplementation: ReactNavigationImplementation {
 //    viewController.navigationItem.accessibilityValue = ""
 //    viewController.navigationItem.accessibilityTraits = 1
 
-    // TODO: 
+    // TODO:
     // right button(s)
     // statusbar stuff
   }
